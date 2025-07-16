@@ -1,0 +1,369 @@
+@font-face {
+  font-family: "RobotoMono";
+  src: url("./assets/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: RobotoMono, sans-serif;
+}
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #162219;
+}
+.container{
+    margin: 100px;
+    padding: 10px;
+    min-height: 700px;
+    min-width: 80%;
+    background-color: #FEFEFE;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+.panel{
+    min-width: 20%;
+    min-height: 100%;
+    border: 2px solid #162219;
+    background-color: #FEFEFE;
+    display: flex;
+    flex-direction: column;
+}
+.board {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 100vh; /* Adjust as needed */
+}
+
+/* Optional: Custom scrollbar styling */
+.board::-webkit-scrollbar {
+  width: 10px;
+}
+
+.board::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.board::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+.board{
+    min-width: 79%;
+    max-height: 1200px;
+    border: 2px solid #162219;
+    background-color: #FEFEFE;
+    overflow-y: auto;
+}
+
+.buttons{
+    object-fit: fill;
+    display: flex;
+    flex-direction: column;
+    background-color: #FEFEFE;
+    padding: 1px;
+}
+
+.button-box{
+    padding-left:20px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FEFEFE;
+  color: #162219;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+button:hover, button:hover i {
+  background-color: #E1E3E2;
+  transform: translateY(-1px);
+}
+
+button:active, button:active i {
+  background-color: #C4C7C5;
+  transform: translateY(0);
+}
+
+i{
+    background-color: #FEFEFE;
+}
+
+/* Header buttons */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background-color: #FEFEFE;
+}
+
+#notifications,
+#close-panel, 
+#add-project-btn{
+  all: unset;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+#notifications:hover,
+#close-panel:hover, #notifications:hover i,
+#close-panel:hover i {
+  background-color: #E1E3E2;
+}
+#add-project-btn i,
+#notifications i,
+#close-panel i {
+  font-size: 18px;
+}
+
+/* Add task icon */
+#add-task-btn i{
+  all: unset;
+  cursor: pointer;
+  background-color: #162219;
+  color: #FEFEFE;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+#add-task label,
+.form-buttons{
+ background-color: #FEFEFE;
+}
+
+.task-form {
+  position: fixed;
+  font-size: medium;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FEFEFE;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: #162219 solid 1px;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  background-color: #FEFEFE;
+  font-size: small;
+  width: 100%;
+  padding: 6px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content:center;
+  gap: 50px;
+  background-color: #FEFEFE;
+}
+.form-buttons button{
+  padding: 10px;
+  border: #162219 solid 1px;
+}
+h2, .task{
+    padding: 1%;
+
+}
+.checkbox-wrapper-18 .round {
+  position: relative;
+}
+
+.checkbox-wrapper-18 .round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  display: block;
+}
+
+.checkbox-wrapper-18 .round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 8px;
+  opacity: 0;
+  position: absolute;
+  top: 9px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.checkbox-wrapper-18 .round input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+  opacity: 0;
+}
+
+.checkbox-wrapper-18 .round input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.checkbox-wrapper-18 .round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #fefefe;
+}
+
+.task-content {
+  flex: 1;
+}
+
+.projects-board {
+  border-top: #162219 dashed 2px;
+}
+
+.projects .button-box {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.projects-board-buttons, .project-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 1px;
+}
+
+.project-item:hover,
+.project-item:hover button,
+.projects-board-buttons:hover,
+.projects-board-buttons:hover button,
+.projects-board-buttons:hover button i {
+  background-color: #E1E3E2;
+  transform: translateY(-1px);
+}
+.projects-board-buttons:active,
+.projects-board-buttons:active button,
+.projects-board-buttons:active button i {
+  background-color: #C4C7C5;
+  transform: translateY(0);
+}
+
+#add-project-btn, .delete-project-btn{
+  padding-right: 8px;
+}
+
+#add-project-btn i{
+  cursor: pointer;
+  color: #162219;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reschedule Button */
+.reschedule-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 8px;
+}
+
+.reschedule-btn:hover {
+  background-color: #E1E3E2;
+  transform: translateY(-1px);
+}
+
+.reschedule-btn:active {
+  background-color: #C4C7C5;
+  transform: translateY(0);
+}
+
+/* Dialog Box */
+#reschedule-dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px 24px;
+  max-width: 300px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+#reschedule-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Reschedule Form */
+#reschedule-dialog {
+  position: fixed;
+  font-size: medium;
+  top: 50%;
+  left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+#reschedule-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+#reschedule-form input[type="date"] {
+  padding: 6px;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.project-board-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
