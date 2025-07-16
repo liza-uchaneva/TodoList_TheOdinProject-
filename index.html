@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="57011448dc08b9372b5e.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Todo List</title>
+  <script defer src="main.js"></script></head>
+  <body>
+      <div class = "container">
+        <div class ="panel">
+          <div class="header">
+            <button id="notifications" aria-label="Notifications">
+              <i class="fas fa-bell"></i>
+            </button>
+            <button id="close-panel" aria-label="Close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="buttons">
+            <button class = "button-box" id="add-task-btn">
+              <i class="fas fa-plus"></i>
+              Add task
+            </button>
+            <button class = "button-box" id="today">
+              <i class="fas fa-calendar-day"></i>
+              Today
+            </button>
+            <button class = "button-box" id="upcoming">
+              <i class="fas fa-hourglass-half"></i>
+              Upcoming
+            </button>
+            <button class = "button-box" id="completed">
+              <i class="fas fa-check"></i>
+              Completed
+            </button>
+            <button class = "button-box" id="uncompleted">
+              <i class="fas fa-times"></i>
+              Uncompleted
+            </button>
+            <div class="projects-board">
+              <div class ="projects-board-buttons">
+                <button class="button-box" id="projects-title">
+                  <i class="fas fa-folder-open"></i>
+                  My projects
+                </button>
+                <button class="button-box" id="add-project-btn" aria-label="Add Project">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="projects"></div>
+            </div>
+          </div>
+        </div>
+        <div class = "board">
+        </div>
+      </div>
+      <!-- Add Task Modal -->
+      <dialog id="add-task">
+        <form id="new-task-form" class="task-form" method="dialog">
+          <label>
+            Title:
+            <input type="text" name="title" required />
+          </label>
+          <label>
+            Description:
+            <textarea name="description"></textarea>
+          </label>
+          <label>
+            Due Date:
+            <input type="date" name="dueDate" />
+          </label>
+          <label>
+            Priority:
+            <select name="priority">
+              <option value="low">Low</option>
+              <option value="normal" selected>Normal</option>
+              <option value="high">High</option>
+            </select>
+          </label>
+          <label>
+            Project:
+            <input type="text" name="project" />
+          </label>
+          <div class="form-buttons">
+            <button type="submit">Add Task</button>
+            <button type="button" id="cancel-task">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+       <!-- Reschedule task form -->
+      <dialog id="reschedule-dialog">
+        <form method="dialog" id="reschedule-form">
+          <label>
+            New Due Date:
+            <input type="date" name="newDate" required />
+          </label>
+          <div class="form-buttons">
+            <button type="submit">Reschedule</button>
+            <button type="button" id="cancel-reschedule">Cancel</button>
+          </div>
+        </form>
+      </dialog>
+  </body>
+</html>
